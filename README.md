@@ -1,13 +1,13 @@
--------¿¿¿¿¿ ¿¿¿¿ ¿¿----------
+-------ì‰˜ìŠ¤í¬ë¦½íŠ¸ ì‹¤ìŠµí™˜ê²½ êµ¬ì¶•----------
 
 
 **********************************
----------¿¿ ¿ ¿¿¿¿¿-----------
+---------ë°°ì‹œ ì‰˜ í”„ë¡œê·¸ë˜ë°-----------
 **********************************
 
-1) ¿¿ ¿¿
+1) ì„ ìˆ˜ ì§€ì‹
 
-2) ¿¿¿
+2) ëª…ë ¹ì–´
 	grep CMD
 		# grep OPTIONS PARRERNS file1
 		OPTIONS: -i, -v ,-l , -n, -r, -w
@@ -18,93 +18,93 @@
 		s cmd) # sed -i '/main/s/192.168.10.10/192.168.10.20/' /etc/host
 		
 	awk CMD
-		# awk 'statement {action}' ¿¿¿¿
+		# awk 'statement {action}' íŒŒì¼ì´ë¦„
 		# awk -F: '$3 >= 1000 && $3 <= 60000 {print $1}' /etc/passwd
 		# df -h / | tail -1 | awk '{print $6}' | awk -F% '{print $1}'
 		# ifconfig eth0 | grep inet | grep -v inet6 | awk '{print $2}' | awk -F: '{print $2}'
 		# ps -elf | awk '$2 == "Z" {print $0}'	
 	+
 	CMD(cut cmd ...)
-	¿¿(sort)
-	¿¿ - ¿¿¿¿¿ ¿¿¿¿ ¿¿
+	ì •ì—´(sort)
+	ì •ì—´ - ì¤‘ë³µëœê²ƒì„ í•˜ë‚˜ë¡œë§Œ í‘œì‹œ
 		# sort -u file1  
-	¿¿ - ¿¿¿¿ ¿¿ ¿¿
+	ì •ì—´ - ì¤‘ë³µë˜ëŠ” ê²ƒë§Œ í‘œì‹œ
 		# sort file1 | uniq -d 
-	¿¿ - ¿¿¿ ¿¿¿¿ ¿¿
+	ì •ì—´ - ì¤‘ë³µë˜ ì•ŠëŠ”ê²ƒë§Œ í‘œì‹œ
 		# sort file1 | uniq -u
 		
-	cut ¿¿¿ - ¿¿¿ ¿¿¿¿ ¿¿¿ ¿¿ ¿¿
-		# cut -c1-5 /etc/hosts - ¿¿ ¿ ¿¿ ¿ 1~5¿¿¿ ¿¿
+	cut ëª…ë ¹ì–´ - í•„ë“œë¥¼ ì˜ë¼ë‚´ëŠ” ì—­í• ë¡œ ë§ì´ ì‚¬ìš©
+		# cut -c1-5 /etc/hosts - ë¬¸ì„œ ê° ì¤„ì˜ ì• 1~5ìë¦¬ë§Œ í‘œí˜„
 		# cat /etc/hosts | tr '[a-z]' '[A-Z]'
-			¿ ¿¿¿¿ ¿¿¿¿ ¿¿¿ ¿¿
+			ã„´ ì†Œë¬¸ìë¥¼ ëŒ€ë¬¸ìë¡œ ë°”ê¿”ì„œ ì¶œë ¥
 		# cat /etc/hosts | egrep -v '(^$|^#)' | cut -f 1 
 		# cut -d ":" -f 1 /etc/passwd 		(# awk -F: '{print $1}' /etc/passwd)
 		# ifconfig eth0 | grep 'inet addr:' | awk '{print $2}' | cut -d":" -f2 
 		
-	paste ¿¿¿ - ¿¿¿ ¿¿¿ ¿¿¿ ¿¿ ¿¿¿ ¿¿¿¿ ¿¿
+	paste ëª…ë ¹ì–´ - ë‹¤ìˆ˜ì˜ íŒŒì¼ì„ í•œë²ˆì— ë³¼ë•Œ ì˜†ìœ¼ë¡œ ì •ë ¬í•´ì„œ ì¶œë ¥
 		# paste file1 file2  
 		
-	wc ¿¿¿
+	wc ëª…ë ¹ì–´
 		# wc /etc/passwd
 
-3) ¿¿ ¿¿
-	¿ ¿¿¿¿¿(Redirection) 		: <  <<  >  >>  2>  2>>
-		# cat < /etc/passwd - ¿¿¿ ¿¿
-		# cat > file1 - ¿¿¿ ¿¿¿ ¿¿ ¿¿¿¿ ¿¿ (¿¿¿ ctl+d)
+3) ì‰˜ì˜ íŠ¹ì„±
+	â— ë¦¬ë‹¤ì´ë ‰ì…˜(Redirection) 		: <  <<  >  >>  2>  2>>
+		# cat < /etc/passwd - ë‚´ìš©ì„ ì¶œë ¥
+		# cat > file1 - íŒŒì¼ì˜ ë‚´ìš©ì„ ì§ì ‘ ì…ë ¥í•˜ì—¬ ìƒì„± (ë§ˆì§€ë§‰ ctl+d)
 		
-	¿ ¿¿¿(pipe)            		: |
-		¿¿¿ ¿¿¿ ¿¿
+	â— íŒŒì´í”„(pipe)            		: |
+		íŒŒì´í”„ ëª…ë ¹ì–´ í˜•ì‹
 		# CMD | more
 		# CMD | grep rsyslogd
 		# CMD | CMD
-	¿ ¿ ¿¿¿ ¿¿(bash function)  	: set -o vi
-	¿ ¿¿(Variable)                 	: export VAR=5
-		¿¿¿ ¿¿
-		- ¿¿¿¿(# VAR=5)
-		- ¿¿¿¿(# export VAR=5)
-		- ¿¿¿¿($$, $?, $!, $*, $1, $2, ....)
+	â— ì…€ ìì²´ì˜ ê¸°ëŠ¥(bash function)  	: set -o vi
+	â— ë³€ìˆ˜(Variable)                 	: export VAR=5
+		ë³€ìˆ˜ì˜ ì¢…ë¥˜
+		- ì§€ì—­ë³€ìˆ˜(# VAR=5)
+		- í™˜ê²½ë³€ìˆ˜(# export VAR=5)
+		- íŠ¹ìˆ˜ë³€ìˆ˜($$, $?, $!, $*, $1, $2, ....)
 		
-		¿¿ ¿¿ ¿¿(env/set)
-		(¿¿) # VAR=5     (# export VAR=hello)
+		ë³€ìˆ˜ ì„ ì–¸ ë°©ë²•(env/set)
+		(ì„ ì–¸) # VAR=5     (# export VAR=hello)
 			 # export VAR 
-		(¿¿) # echo $VAR (# printf $VAR)
+		(í™•ì¸) # echo $VAR (# printf $VAR)
 			
-		$$ : ¿¿ ¿¿ PID ¿¿ ¿¿(EX: ¿¿ ¿¿ ¿¿, /tmp/.tmp.$$)
-		$! : ¿¿ ¿¿ ¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿ PID ¿¿ ¿¿
-		$? : ¿¿ ¿¿ ¿¿¿ ¿¿¿¿ return value ¿¿(0 ~ 255)
-		$* : ¿¿ ¿¿($* == $@)
-		$# : ¿¿¿ ¿¿
-		$0 : ¿¿¿¿ ¿¿
-		$1 : ¿¿¿¿¿ ¿¿ ¿¿¿ ¿¿
-		$2 : ¿¿¿¿¿ ¿¿ ¿¿¿ ¿¿
-		$3 : ¿¿¿¿¿ ¿¿ ¿¿¿ ¿¿
-			(¿¿) # unset VAR 
-	¿ ¿¿ - alias¿ ¿¿ ¿¿¿¿ ¿¿¿ ¿¿ ¿¿¿!
-	(¿¿) # a() { ls; date; cal; }   or   function a { ls; date; cal; }
-	(¿¿) # a 
-	(¿¿) # typeset -f 
-	(¿¿) # unset -f a 
-	[¿¿] CMD -> alias -> function -> script
-	¿ ¿¿¿(Grouping) 
+		$$ : í˜„ì¬ ì‰˜ì˜ PID ë²ˆí˜¸ ì €ì¥(EX: ì„ì‹œ íŒŒì¼ ìƒì„±, /tmp/.tmp.$$)
+		$! : ë°”ë¡œ ì´ì „ ìˆ˜í–‰ëœ ë°±ê·¸ë¼ìš´ë“œ í”„ë¡œì„¸ìŠ¤ì˜ PID ë²ˆí˜¸ ì €ì¥
+		$? : ë°”ë¡œ ì´ì „ ìˆ˜í–‰ëœ ëª…ë ¹ì–´ì˜ return value ì €ì¥(0 ~ 255)
+		$* : ëª¨ë“  ì¸ì($* == $@)
+		$# : ì¸ìì˜ ê°œìˆ˜
+		$0 : í”„ë¡œê·¸ë¨ ì´ë¦„
+		$1 : í”„ë¡œê·¸ë¨ì— ëŒ€í•œ ì²«ë²ˆì§¸ ì¸ì
+		$2 : í”„ë¡œê·¸ë¨ì— ëŒ€í•œ ë‘ë²ˆì§¸ ì¸ì
+		$3 : í”„ë¡œê·¸ë¨ì— ëŒ€í•œ ì„¸ë²ˆì§¸ ì¸ì
+			(í•´ì œ) # unset VAR 
+	â— í•¨ìˆ˜ - aliasì™€ ê°™ì´ ì„ ì–¸í•˜ì—¬ ëª…ë ¹ì–´ ì²˜ëŸ¼ ì‚¬ìš©í•¨!
+	(ì„ ì–¸) # a() { ls; date; cal; }   or   function a { ls; date; cal; }
+	(ì‹¤í–‰) # a 
+	(í™•ì¸) # typeset -f 
+	(í•´ì œ) # unset -f a 
+	[ì°¸ê³ ] CMD -> alias -> function -> script
+	â— ê·¸ë£¹í™”(Grouping) 
 		( ls ; pwd ; date ) > outputfile 
-	¿ ¿¿ ¿¿¿ ( && , || )
-	¿ ¿¿¿¿¿(Metacharacter)		: ''  ""  ``  ;
-	¿ ¿¿¿¿(History)				: history	
-	¿ ¿¿¿¿(Environment Files)		: /etc/profile, ~/.bash_profile, ~/.bashrc
+	â— ì¡°ê±´ ì—°ì‚°ì ( && , || )
+	â— ë©”íƒ€ìºë¦­í„°(Metacharacter)		: ''  ""  ``  ;
+	â— íˆìŠ¤í† ë¦¬(History)				: history	
+	â— í™˜ê²½íŒŒì¼(Environment Files)		: /etc/profile, ~/.bash_profile, ~/.bashrc
 
-5) ¿ ¿¿¿¿ ¿¿
+5) ì‰˜ ìŠ¤í¬ë¦½íŠ¸ ì‘ì„±
 
-	1. ¿¿¿¿ ¿¿¿ ¿¿
+	1. í”„ë¡œê·¸ë¨ ì‘ì„±ê³¼ ì‹¤í–‰
 		# bash -x script.sh
 		# . ~/.bashrc
 		# vi script.sh ' chmod +x script.sh ; ./script.sh
 		
-	2. ¿¿¿¿
-		* ¿¿ ¿¿ - #
-		* ¿¿ ¿ ¿¿ - : << EOF ~ EOF
-	3. ¿¿¿ ¿¿
-		¿¿ : echo CMD, printf CMD
-		¿¿ : read CMD
+	2. ì£¼ì„ê´€ë¦¬
+		* í•œì¤„ ì²˜ë¦¬ - #
+		* ì—¬ëŸ¬ ì¤„ ì²˜ë¦¬ - : << EOF ~ EOF
+	3. ì…ë ¥ê³¼ ì¶œë ¥
+		ì¶œë ¥ : echo CMD, printf CMD
+		ì…ë ¥ : read CMD
 		
 #!/bin/bash
 
@@ -119,39 +119,39 @@
 # -> systemctl status sshd
 
 
--------------continue¿ ¿¿¿¿ ¿¿¿ ¿¿¿¿ ¿¿----------------
+-------------continueë¥¼ ì‚¬ìš©í•˜ì—¬ ë¬¸ì œë¥¼ í™•ì¸í•˜ëŠ” ì˜ˆì œ----------------
 
 #!/bin/bash
 
 egrep -i '(warn|fail|error|crit|alert|emerg)' /var/log/messages > /tmp/.tmp1
-¿ ¿¿¿ ¿¿¿ ¿¿¿ (30¿ ¿ ¿¿)
+ã„´ ì•ˆì¢‹ì€ ë‹¨ì–´ë¥¼ ê²€ìƒ‰í•¨ (30ì´ˆ ì „ íŒŒì¼)
 
-while true - ¿¿¿
+while true - ì°¸ì¼ë•Œ
 do
-    sleep 30 - 30¿ ¿¿
+    sleep 30 - 30ì´ˆ ì‰¬ê³ 
     egrep -i '(warn|fail|error|crit|alert|emerg)' /var/log/messages > /tmp/.tmp2
-		¿ 30¿ ¿¿ ¿¿¿ ¿¿ ¿¿¿¿ tmp1 ¿ 2¿ ¿¿¿¿ ¿¿¿
+		ã„´ 30ì´ˆ ë’¤ì— íŒŒì¼ì„ ë‹¤ì‹œ ê²€ì‚¬í•˜ì—¬ tmp1 ê³¼ 2ì˜ ì°¨ì´ì ì„ ë¹„êµí•¨
 	diff /tmp/.tmp1 /tmp/.tmp2 > /tmp/.tmp3 && continue
-		¿ ¿¿¿¿ ¿¿¿ tmp ¿¿¿¿ ¿¿ ¿¿¿ ¿¿¿ continue!
+		ã„´ ê²°ê³¼ê°’ì´ ì €ì¥ëœ tmp íŒŒì¼ë“¤ì„ ì„œë¡œ ë¹„êµí•´ ê°™ìœ¼ë©´ continue!
     mailx -s "[WARN] Log Mail Check" root < /tmp/.tmp3
-		¿ ¿¿¿¿ ¿¿ ¿¿¿ ¿¿¿¿ ¿¿¿¿¿ ¿¿¿ ¿¿¿ ¿ 
+		ã„´ ê²°ê³¼ê°’ì´ ë‹¬ë¼ ì•„ë˜ë¡œ ë‚´ë ¤ì™€ì„œ ê´€ë¦¬ìì—ê²Œ ë©”ì¼ì„ ë³´ë‚´ê²Œ í•¨ 
     egrep -i '(warn|error|crit|alert|emerg)' /var/log/messages > /tmp/.tmp1
-		¿ ¿¿ ¿¿¿¿ ¿¿¿¿ ¿¿¿ tmp1¿ ¿¿
+		ã„´ ë‹¤ì‹œ ë°˜ë³µí•´ì„œ ê²€ì‚¬í•˜ì—¬ ë‚´ìš©ì„ tmp1ì— ë„£ìŒ
 done
 
-(¿¿)
-¿¿: ¿¿ ¿¿¿ ¿¿¿¿ ¿¿ ¿¿¿¿ ¿¿
-¿¿: 
-¿ ¿¿ ¿¿¿ ¿¿¿ ¿¿¿ ¿¿
-¿ ¿¿ ¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿¿¿ ¿¿¿ ¿¿(To: root)
-¿ ¿ ¿¿¿¿¿ ¿¿¿¿ ¿¿¿.(EX: Daemon)
-¿ ¿¿¿¿ ¿¿¿: egrep -i '(warn|fail|err|crit|alert|emerg)' /var/log/messages
-¿ 30¿¿ ¿¿¿ ¿¿ ¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿¿.
+(ê¸°ëŠ¥)
+ëª©ì : ë¡œê·¸ íŒŒì¼ì„ ëª¨ë‹ˆí„°ë§ í•˜ëŠ” í”„ë¡œê·¸ë¨ ì‘ì„±
+ê¸°ëŠ¥: 
+â— ë¡œê·¸ íŒŒì¼ì˜ ì¶”ê°€ëœ ë‚´ìš©ì„ í™•ì¸
+â— ë¡œê·¸ íŒŒì¼ì˜ ì¶”ê°€ëœ ë‚´ìš©ì´ ì¡´ì¬í•œë‹¤ë©´ ë©”ì¼ë¡œ ì „ì†¡(To: root)
+â— ì´ í”„ë¡œê·¸ë¨ì€ ì¢…ë£Œë˜ë©´ ì•ˆëœë‹¤.(EX: Daemon)
+â— ì‚¬ìš©í•˜ëŠ” ëª…ë ¹ì–´: egrep -i '(warn|fail|err|crit|alert|emerg)' /var/log/messages
+â— 30ì´ˆì— í•œë²ˆì”© ë¡œê·¸ íŒŒì¼ì˜ ë‚´ìš©ì— ì¶”ê°€ëœ ë‚´ìš©ì„ í™•ì¸í•œë‹¤.
 
-* diff ¿¿¿ ¿¿: diff file1 file2 = ¿¿1¿ ¿¿2¿ ¿¿¿ ¿¿
+* diff ëª…ë ¹ì–´ ì‚¬ìš©: diff file1 file2 = íŒŒì¼1ê³¼ íŒŒì¼2ì˜ ì°¨ì´ì  ë¹„êµ
 
 
----------------FTP ¿¿ ¿¿------------------------
+---------------FTP ì‚¬ìš© ì˜ˆì œ------------------------
 #!/bin/bash
 HELP(){
 cat << EOF
@@ -179,27 +179,27 @@ do
     esac
 -------------------------------------------------
 
-*) IO ¿¿¿¿¿ ¿¿ ¿¿¿¿
+*) IO ë¦¬ë‹¤ì´ë ‰ì…˜ ìì‹ í”„ë¡œì„¸ìŠ¤
 	for LINE in $(cat file1)
 	do
 		echo $LINE
 	done > file2
-	----¿¿2(¿¿)---
+	----ë°©ë²•2(ê¶Œì¥)---
 	cat file1 | while read LINE
 	do
 		echo $LINE
 	done > file2
 
-*) ¿¿¿ ¿¿
-	*¿¿¿¿¿
-	*¿¿¿ ¿¿¿ ¿¿¿¿ ¿¿¿ ¿¿
+*) ì‹œê·¸ë„ ì œì–´
+	*ì‹œê·¸ë„ë¬´ì‹œ
+	*ì‹œê·¸ë„ ë°›ìœ¼ë©´ ê°œë°œìê°€ ì›í•˜ëŠ” ë™ì‘
 
-*) ¿¿¿
+*) ë””ë²„ê¹…
 	* bash -x script.sh
 	* bash -xv script.sh
-*) ¿¿ ¿¿
+*) ì˜µì…˜ ì²˜ë¦¬
 	getopts CMD + while CMD + case CMD
-	(¿) # ssh.sh -p 80 192.168.10.20
+	(ì˜ˆ) # ssh.sh -p 80 192.168.10.20
 	while getopts p: options
 	do
 		case $options in
@@ -210,7 +210,7 @@ do
 	done
 
 
------------¿¿ ¿¿ ¿¿--------------------
+-----------ì„œë²„ ì²´í¬ íŒŒì¼--------------------
 #!/bin/bash
 #   # ./check_service.sh 192.168.10.10 192.168.10.20
 #   ------------------
@@ -263,7 +263,7 @@ $(diff $FSERVER $SSERVER | fgrep '>' | cut -c3-)
 
 EOF
 
-----vscode ¿¿¿¿ ¿¿¿¿ ¿¿------
+----vscode ìë™ìœ¼ë¡œ ì¼œì§€ë„ë¡ ì„¤ì •------
 * crontab + vskill.sh
 
 kill $(ps -ef | grep -w code \
@@ -276,16 +276,36 @@ kill $(ps -ef | grep -w code \
 fdisk -l | grep LVM | awk '{print $1}' > pv1.txt
 pvs | tail -n +2 | awk '{print $1}' > pv2.txt
 
-ENV1.sh : ¿¿¿¿
+ENV1.sh : í™˜ê²½ì„¤ì •
 	* $HOME/.bashrc
-ENV2.sh : ¿¿¿ ¿¿¿ ¿¿
-	* ¿¿¿ ¿¿ (gcc, php, vscode)
-ENV3.sh : ¿¿ ¿¿
-	¿¿ ¿¿ - telnet-server
-	ftp ¿¿ - vsftpd ftp
-	ssh ¿¿ - openssh-server openssh-clients openssh-clients
-	nginx ¿ ¿¿ - yum -y install nginx
+ENV2.sh : í•„ìš”í•œ íŒ¨í‚¤ì§€ ì„¤ì¹˜
+	* íŒ¨í‚¤ì§€ ì„¤ì¹˜ (gcc, php, vscode)
+ENV3.sh : ì„œë²„ ì„¸íŒ…
+	í…”ë„· ì„œë²„ - telnet-server
+	ftp ì„œë²„ - vsftpd ftp
+	ssh ì„œë²„ - openssh-server openssh-clients openssh-clients
+	nginx ì›¹ ì„œë²„ - yum -y install nginx
 				  echo "Nginx webserver > /usr/share/nginx/html/index.html
 				  systemctl enable --now nginx.server
 
 
+cat << EOF > /etc/yum.repos.d/vscode.repo
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc" 
+EOF
+
+yum install code
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+yum install code
+
+https://www.google.co.kr/chrome/thank-you.html?brand=YTUH&statcb=0&installdataindex=empty&defaultbrowser=0#
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -O /root/bin/
+
+yum localinstall google-chrome-stable_current_x86_64
